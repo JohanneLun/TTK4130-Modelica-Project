@@ -1,0 +1,11 @@
+Log-file of program C:\Users\johanndk\Downloads\WasteWater\dymosim.exe
+(generated: Tue Feb 20 10:50:30 2018)
+
+dymosim.exe started
+Runtime license not available, trying to check out the Dymola Standard license instead.
+
+License from "c:/users/bjornolo/appdata/roaming/dynasim/dymola.lic" could not be checked out. 
+License file not found.
+
+
+You can specify the location of the license file through the environment variable "DYMOLA_RUNTIME_LICENSE"
