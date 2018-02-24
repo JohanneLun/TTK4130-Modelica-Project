@@ -62,35 +62,39 @@ model nitri "ASM1 nitrification tank"
   extends Interfaces.ASM1base;
 
   // tank specific parameters
-  parameter Modelica.SIunits.Volume V=1000 "Volume of nitrification tank";
+  parameter Modelica.SIunits.Volume V=1333 "Volume of nitrification tank";
 
   // aeration system dependent parameters
   parameter Real alpha=0.7 "Oxygen transfer factor";
   parameter Modelica.SIunits.Length de=4.5 "depth of aeration";
   parameter Real R_air=23.5 "specific oxygen feed factor [gO2/(m^3*m)]";
-  parameter Real Kla=10;
-  WWU.MassConcentration So_sat "Dissolved oxygen saturation";
+
+  WWU.MassConcentration So_sat = 8.0 "Dissolved oxygen saturation";
 
   Interfaces.WWFlowAsm1in In annotation (Placement(transformation(extent={{-110,
             -10},{-90,10}})));
-  Interfaces.WWFlowAsm1out Out annotation (Placement(transformation(extent={{90,
-            -10},{110,10}})));
+  Interfaces.WWFlowAsm1out Out annotation (Placement(transformation(extent={{90,-10},
+            {110,10}})));
   Interfaces.WWFlowAsm1out MeasurePort annotation (Placement(transformation(
           extent={{50,40},{60,50}})));
   Modelica.Blocks.Interfaces.RealInput T annotation (Placement(transformation(
           extent={{-110,30},{-90,50}})));
+  Modelica.Blocks.Interfaces.RealOutput Kla annotation (Placement(
+       transformation(extent={{-10,-10},{10,10}},
+        rotation=90,
+        origin={2,30})));
+
   Interfaces.AirFlow AirIn annotation (Placement(transformation(extent={{-5,
             -103},{5,-93}})));
 equation
 
   // Temperature dependent oxygen saturation by Simba
-  So_sat =13.89 + (-0.3825 + (0.007311 - 0.00006588*T)*T)*T;
 
   // extends the Oxygen differential equation by an aeration term
   // aeration [mgO2/l]; AirIn.Q_air needs to be in
   // Simulationtimeunit [m3*day^-1]
-  //aeration = (alpha*(So_sat - So)/So_sat*AirIn.Q_air*R_air*de)/V;
-   aeration = Kla * (So_sat - So);
+  //aeration = (alpha*(So_sat - So)/So_sat*de)/V;
+  aeration = Kla * (So_sat - So);
 
   // volume dependent dilution term of each concentration
 
@@ -121,7 +125,8 @@ Parameters:
   alpha - oxygen transfer factor
   de    - depth of the aeration system [m]
   R_air - specific oxygen feed factor [g O2/(m3*m)]
-"));
+"), Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{
+            100,100}}), graphics));
 end nitri;
 
 
@@ -416,20 +421,35 @@ model WWSource "Wastewater source"
     annotation (Placement(transformation(extent={{-100,-10},{-80,10}})));
 equation
 
-  Out.Q =18446;
-  Out.Si =30;
-  Out.Ss =69.5;
-  Out.Xi =51.2;
+  Out.Q =-data[1];
+  Out.Si =data[2];
+  Out.Ss =data[3];
+  Out.Xi =data[4];
+  Out.Xs =data[5];
+  Out.Xbh =data[6];
+  Out.Xba =data[7];
+  Out.Xp =data[8];
+  Out.So =data[9];
+  Out.Sno =data[10];
+  Out.Snh =data[11];
+  Out.Snd =data[12];
+  Out.Xnd =data[13];
+  Out.Salk =data[14];
+
+ /* Out.Q = -18446;
+  Out.Si =30.00;
+  Out.Ss =69.50;
+  Out.Xi =51.20;
   Out.Xs =202.32;
   Out.Xbh =28.17;
-  Out.Xba =0;
-  Out.Xp =0;
-  Out.So =0;
-  Out.Sno =0;
+  Out.Xba =0.00;
+  Out.Xp = 0.00;
+  Out.So = 0.00;
+  Out.Sno = 0.00;
   Out.Snh =31.56;
   Out.Snd =6.95;
   Out.Xnd =10.59;
-  Out.Salk =7;
+  Out.Salk =7.00;*/
 
   annotation (
     Documentation(info="This component provides all ASM1 data at the influent of a wastewater treatment plant.

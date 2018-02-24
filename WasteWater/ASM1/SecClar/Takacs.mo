@@ -556,8 +556,8 @@ function by Takacs."),
               -110},{10,-90}})));
     WWSC.UpperLayerPin Up annotation (Placement(transformation(extent={{-10,90},
               {10,110}})));
-    ASM1.Interfaces.WWFlowAsm1in In annotation (Placement(transformation(extent
-            ={{-110,-6},{-90,14}})));
+    ASM1.Interfaces.WWFlowAsm1in In annotation (Placement(transformation(extent=
+             {{-110,-6},{-90,14}})));
   equation
 
     // sink velocity

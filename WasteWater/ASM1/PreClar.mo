@@ -37,8 +37,8 @@ package PreClar "Primary clarifier modelling based on ASM1"
     Real CODout;
     Real XCODin;
     Real H;
-    ASM1.Interfaces.WWFlowAsm1in In annotation (Placement(transformation(extent
-            ={{-110,-10},{-90,10}})));
+    ASM1.Interfaces.WWFlowAsm1in In annotation (Placement(transformation(extent=
+             {{-110,-10},{-90,10}})));
     ASM1.Interfaces.WWFlowAsm1out Out annotation (Placement(transformation(
             extent={{90,-10},{110,10}})));
     ASM1.Interfaces.WWFlowAsm1out MeasurePort annotation (Placement(
@@ -163,8 +163,8 @@ Parameter:
     Real CODout;
     Real XCODin;
     Real H;
-    ASM1.Interfaces.WWFlowAsm1in In annotation (Placement(transformation(extent
-            ={{-110,-10},{-90,10}})));
+    ASM1.Interfaces.WWFlowAsm1in In annotation (Placement(transformation(extent=
+             {{-110,-10},{-90,10}})));
     ASM1.Interfaces.WWFlowAsm1out Out annotation (Placement(transformation(
             extent={{90,-10},{110,10}})));
     ASM1.Interfaces.WWFlowAsm1out MeasurePort annotation (Placement(
@@ -305,8 +305,8 @@ Parameter:
     Real CODout;
     Real XCOD;
     Real H;
-    ASM1.Interfaces.WWFlowAsm1in In annotation (Placement(transformation(extent
-            ={{-110,-10},{-90,10}})));
+    ASM1.Interfaces.WWFlowAsm1in In annotation (Placement(transformation(extent=
+             {{-110,-10},{-90,10}})));
     ASM1.Interfaces.WWFlowAsm1out Out annotation (Placement(transformation(
             extent={{90,-10},{110,10}})));
     Modelica.Blocks.Interfaces.RealInput MeasurePort[4]
