@@ -269,6 +269,8 @@ Main Author:
       annotation (Placement(transformation(extent={{75,74},{95,94}})));
     WasteWater.ASM1.OCI oCI
       annotation (Placement(transformation(extent={{147,76},{167,96}})));
+    WasteWater.ASM1.sensor_Q sensor_Qr
+      annotation (Placement(transformation(extent={{-23,-50},{-43,-30}})));
   equation
     connect(tank3.Out, tank4.In) annotation (Line(points={{-10,5},{-10,5},{-6,5}}));
     connect(tank3.In, tank2.Out) annotation (Line(points={{-30,5},{-44,5},{-44,
@@ -298,10 +300,6 @@ Main Author:
     connect(pump1.u, Constant2.y) annotation (Line(
         points={{35.9,-39.5},{45,-39.5},{45,-68}},
         color={0,0,127},
-        smooth=Smooth.None));
-    connect(pump1.Out, mixer3_1.In2) annotation (Line(
-        points={{17,-39.8},{-145.5,-39.8},{-145.5,32.5},{-135,32.5}},
-        color={0,0,0},
         smooth=Smooth.None));
     connect(mixer3_1.In3, pump.Out) annotation (Line(
         points={{-135,28.5},{-138,28.5},{-138,-16.8},{-100,-16.8}},
@@ -476,6 +474,14 @@ Main Author:
     connect(sensor_SP.SP, oCI.SP) annotation (Line(
         points={{164,-66.8},{134,-66.8},{134,76.8},{147,76.8}},
         color={0,0,127},
+        smooth=Smooth.None));
+    connect(mixer3_1.In2, sensor_Qr.Out) annotation (Line(
+        points={{-135,32.5},{-143,32.5},{-143,-39.8},{-43,-40}},
+        color={0,0,255},
+        smooth=Smooth.None));
+    connect(sensor_Qr.In, pump1.Out) annotation (Line(
+        points={{-23,-40},{-3,-40},{-3,-39.8},{17,-39.8}},
+        color={0,0,255},
         smooth=Smooth.None));
     annotation (
       Diagram(coordinateSystem(

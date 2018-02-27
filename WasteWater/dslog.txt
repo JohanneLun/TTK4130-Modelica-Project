@@ -1,5 +1,5 @@
 Log-file of program ./dymosim
-(generated: Tue Feb 27 12:44:33 2018)
+(generated: Tue Feb 27 14:13:44 2018)
 
 dymosim started
 ... "dsin.txt" loading (dymosim input file)
@@ -10,20 +10,20 @@ dymosim started
 Integration started at T = 1 using integration method LSODAR
 (Multi-step solver for stiff and non-stiff ODE's with root finder (lsodar of ODEPACK))
 Integration terminated successfully at T = 14
-   CPU-time for integration      : 0.033 seconds
-   CPU-time for one GRID interval: 0.33 milli-seconds
+   CPU-time for integration      : 0.028 seconds
+   CPU-time for one GRID interval: 0.28 milli-seconds
    Number of result points       : 101
    Number of GRID   points       : 101
-   Number of (successful) steps  : 420
-   Number of F-evaluations       : 3110
-   Number of H-evaluations       : 520
-   Number of Jacobian-evaluations: 64
+   Number of (successful) steps  : 373
+   Number of F-evaluations       : 2708
+   Number of H-evaluations       : 473
+   Number of Jacobian-evaluations: 55
    Number of (model) time events : 0
    Number of (U) time events     : 0
    Number of state    events     : 0
    Number of step     events     : 0
-   Minimum integration stepsize  : 0.00343
-   Maximum integration stepsize  : 0.176
+   Minimum integration stepsize  : 0.00274
+   Maximum integration stepsize  : 0.266
    Maximum integration order     : 5
 Calling terminal section
 ... "dsfinal.txt" creating (final states)

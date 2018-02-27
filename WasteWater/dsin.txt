@@ -1683,7 +1683,7 @@ double initialValue(822,6)
   0       0                  0       0                  6  1280   # CombiTableTime.tableOnFileRead
   0     240                  0       0                  6   256   # aeration_energy.Kla3
   0     240                  0       0                  6   256   # aeration_energy.Kla4
-  0      84                  0       0                  6   256   # aeration_energy.Kla5
+  0     240                  0       0                  6   256   # aeration_energy.Kla5
   0       0                  0       0                  2   280   # aeration_energy.AE
   0       0                  0       0                  3   256   # aeration_energy.der(AE)
   0 1.0000000000000000E-003  0       0                  2   280   # aeration_energy.T
@@ -1725,7 +1725,7 @@ double initialValue(822,6)
   0       0                  0       0                  3   256   # pE.der(T)
   0     240                  0       0                  6   256   # mE.Kla3
   0     240                  0       0                  6   256   # mE.Kla4
-  0      84                  0       0                  6   256   # mE.Kla5
+  0     240                  0       0                  6   256   # mE.Kla5
   0       0                  0       0                  2   280   # mE.ME
   0       0                  0       0                  3   256   # mE.der(ME)
   0       0                  0       0                  6   256   # mE.From_ax_1

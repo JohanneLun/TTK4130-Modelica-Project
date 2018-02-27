@@ -84,11 +84,6 @@ model nitri "ASM1 nitrification tank"
        transformation(extent={{-10,-10},{10,10}},
         rotation=90,
         origin={2,30})));
- /* Modelica.Blocks.Interfaces.RealOutput V=1333 annotation (Placement(
-       transformation(extent={{-10,-80},{-30,-60}},
-        rotation=90,
-        origin={2,30})));
-*/
   Interfaces.AirFlow AirIn annotation (Placement(transformation(extent={{-5,
             -103},{5,-93}})));
 equation
@@ -327,7 +322,9 @@ model pump "ASM1 wastewater pump"
 equation
 
   H =0.5*(-Q_min + Q_max) + u*0.5*(-Q_min + Q_max) + Q_min;
+  //H=u;
   Out.Q = -(if H > Q_max then Q_max else if H < Q_min then Q_min else H);
+  //Out.Q = -(if H > Q_max then 14 else if H < Q_min then 11 else H);
 
   Out.Q + In.Q = 0;
   Out.Si = In.Si;
