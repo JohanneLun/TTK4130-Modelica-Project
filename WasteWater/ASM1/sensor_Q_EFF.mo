@@ -15,10 +15,6 @@ model sensor_Q_EFF
   Modelica.Blocks.Interfaces.RealOutput EQ(start=0) annotation (Placement(transformation(
           extent={{96,48},{116,68}})));
   Real T(start=1e-3);
-    annotation (Placement(transformation(
-        origin={0,-98},
-        extent={{-10,-10},{10,10}},
-        rotation=270)));
 equation
 
   In.Q + Out.Q = 0;
@@ -46,7 +42,10 @@ equation
   In.Xnd = Out.Xnd;
   In.Salk = Out.Salk;
 
-  annotation (
+    annotation (Placement(transformation(
+        origin={0,-98},
+        extent={{-10,-10},{10,10}},
+        rotation=270)),
     Documentation(info="This component measures the flow of an ASM1 wastewater stream and provides
 the result as output signal (to be further processed with blocks of
 the Modelica.Blocks library).

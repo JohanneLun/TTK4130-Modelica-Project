@@ -12,7 +12,7 @@ model nitri_tank5 "ASM1 nitrification tank"
   parameter Real alpha=0.7 "Oxygen transfer factor";
   parameter Modelica.SIunits.Length de=4.5 "depth of aeration";
   parameter Real R_air=23.5 "specific oxygen feed factor [gO2/(m^3*m)]";
-  //Real Kla;
+  //Real Kla = 84;
   WWU.MassConcentration So_sat = 8.0 "Dissolved oxygen saturation";
 
   Interfaces.WWFlowAsm1in In annotation (Placement(transformation(extent={{-110,
@@ -23,21 +23,25 @@ model nitri_tank5 "ASM1 nitrification tank"
           extent={{50,40},{60,50}})));
   Modelica.Blocks.Interfaces.RealInput T annotation (Placement(transformation(
           extent={{-110,30},{-90,50}})));
-            Modelica.Blocks.Interfaces.RealOutput Kla annotation (Placement(
+         Modelica.Blocks.Interfaces.RealOutput Kla = 84 annotation (Placement(
         transformation(extent={{-10,-10},{10,10}},
         rotation=90,
         origin={0,30})));
+          /*Modelica.Blocks.Interfaces.RealOutput V annotation (Placement(
+       transformation(extent={{-10,-80},{10,-60}},
+        rotation=90,
+        origin={2,30})));*/
   Interfaces.AirFlow AirIn annotation (Placement(transformation(extent={{-5,
             -103},{5,-93}})));
 equation
 
   // Temperature dependent oxygen saturation by Simba
-  So = 2;
+  //So = 2;
   // extends the Oxygen differential equation by an aeration term
   // aeration [mgO2/l]; AirIn.Q_air needs to be in
   // Simulationtimeunit [m3*day^-1]
-  //aeration = (alpha*(So_sat - So)/So_sat*de)/V;
-  aeration = Kla * (So_sat - So);
+  aeration = (alpha*(So_sat - So)/So_sat*de)/V;
+  //aeration = Kla * (So_sat - So);
 
   // volume dependent dilution term of each concentration
 

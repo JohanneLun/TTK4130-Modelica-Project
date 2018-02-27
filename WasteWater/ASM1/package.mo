@@ -20,6 +20,7 @@ model deni "ASM1 denitrification tank"
           extent={{50,40},{60,50}})));
   Modelica.Blocks.Interfaces.RealInput T annotation (Placement(transformation(
           extent={{-110,30},{-90,50}})));
+  //Modelica.Blocks.Interfaces.RealOutput
 equation
 
   aeration = 0;
@@ -83,7 +84,11 @@ model nitri "ASM1 nitrification tank"
        transformation(extent={{-10,-10},{10,10}},
         rotation=90,
         origin={2,30})));
-
+ /* Modelica.Blocks.Interfaces.RealOutput V=1333 annotation (Placement(
+       transformation(extent={{-10,-80},{-30,-60}},
+        rotation=90,
+        origin={2,30})));
+*/
   Interfaces.AirFlow AirIn annotation (Placement(transformation(extent={{-5,
             -103},{5,-93}})));
 equation
@@ -869,7 +874,7 @@ model sensor_TSS
   extends WasteWater.Icons.sensor_TSS;
   Interfaces.WWFlowAsm1in In annotation (Placement(transformation(extent={{-10,
             -110},{10,-90}})));
-  Modelica.Blocks.Interfaces.RealOutput TSS annotation (Placement(
+  Modelica.Blocks.Interfaces.RealOutput ME annotation (Placement(
         transformation(extent={{88,-10},{108,10}})));
 equation
 
