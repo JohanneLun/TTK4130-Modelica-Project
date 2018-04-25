@@ -1,0 +1,5 @@
+Log-file of program .\dymosim.exe
+(generated: Tue Apr 24 13:10:13 2018)
+
+dymosim.exe started
+... "dsin.txt" creating (dymosim input file).
